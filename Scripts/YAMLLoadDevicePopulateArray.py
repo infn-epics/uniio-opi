@@ -33,7 +33,7 @@ confpath = display_path + "/" + conffile
 if not os.path.exists(confpath):
     ScriptUtil.showMessageDialog(widget, "Cannot find file \"" + confpath + "\" please set CONFFILE macro to a correct file")
 
-print("LOADING YAML:" + confpath + " zoneSelector: \"" + zoneSelector + " typeSelector: \"" + str(typeSelector)+"\"")
+print("LOADING \""+devgroup_widget+"\" YAML:" + confpath + " zoneSelector: \"" + zoneSelector + " typeSelector: \"" + str(typeSelector)+"\"")
 
 
 yaml = Yaml()
@@ -92,8 +92,11 @@ for ioc in iocs:
                 continue
             if typeSelector and typeSelector != "ALL" and typeSelector != devfunc:
                 continue
-            zone=str(zones)
-            print("devgroup:"+devgroup_widget+" Add IOC "+str(dev))
+            if len(zones)==1:
+                zone=zones[0]
+            else:
+                zone=str(zones)
+
 
             devarray.append({'NAME':name,'R': iocroot, "P": prefix, "TYPE": devfunc, "ZONE": zone,"OPI":opi})
 
