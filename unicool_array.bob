@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Saved on 2025-07-18 11:31:06 by andreamichelotti-->
 <display version="2.0.0">
-  <name>vacuumArrayMain_$(LCID)</name>
+  <name>ArrayMain_$(LCID)</name>
   <macros>
-    <READOUTPV>$(READOUTPV=TEMP_RB)</READOUTPV>
-    <SETPOINTPV>$(SETPOINTPV)=TEMP_SP)</SETPOINTPV>
-    <STATUSPV>$(STATUSPV)=STATUS_RB)</STATUSPV>
-    <SETSTATUS>$(SETSTATUS)=STATUS_SP)</SETSTATUS>
+    
   </macros>
   <width>581</width>
   <height>590</height>
@@ -53,7 +50,7 @@
   </widget>
   <widget type="embedded" version="2.0.0">
     <name>Array_$(LCID)</name>
-    <file>cool_display.bob</file>
+    <file>unicool_display.bob</file>
     <y>20</y>
     <width>490</width>
     <height>570</height>

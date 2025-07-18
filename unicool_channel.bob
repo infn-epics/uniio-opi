@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2025-07-18 12:58:41 by andreamichelotti-->
+<!--Saved on 2025-07-18 16:28:21 by andreamichelotti-->
 <display version="2.0.0">
   <name>channel</name>
+  <macros>
+    <READOUTPV>TEMP_RB</READOUTPV>
+    <SETPOINTPV>TEMP_SP</SETPOINTPV>
+    <STATUSPV>STATE_RB</STATUSPV>
+    <SETSTATUS>STATE_SP</SETSTATUS>
+  </macros>
   <width>520</width>
   <height>30</height>
   <widget type="rectangle" version="2.0.0">
