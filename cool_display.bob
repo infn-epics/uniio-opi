@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Saved on 2025-07-18 15:42:16 by andreamichelotti-->
 <display version="2.0.0">
-  <name>display_$(LCID)</name>
+  <name>Cooling Display</name>
   <width>520</width>
   <height>570</height>
   <scripts>
