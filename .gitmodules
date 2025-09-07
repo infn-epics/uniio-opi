@@ -1,3 +1,3 @@
 [submodule "icpdas-opi"]
 	path = icpdas-opi
-	url = git@github.com:infn-epics/icpdas-opi.git
+	url = ../icpdas-opi.git
