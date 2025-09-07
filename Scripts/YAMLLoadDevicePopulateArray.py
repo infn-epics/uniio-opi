@@ -71,17 +71,14 @@ for ioc in iocs:
         for dev in devices:
             name = dev['name']
             prefix=iocprefix
-            devtype=ioc.get("devtype", "ALL")
-            devfunc  = ioc.get("devfunc", "")
+            devtype=dev.get("devtype", "ALL")
+            iocroot=ioc.get("iocroot", "")
 
             if 'opi' in dev:
                 opi=dev['opi']
             if 'zones' in dev:
                 zones=dev['zones']
-            if 'name' in dev:
-                iocroot=dev['name']
-            if 'devfunc' in dev:
-                devfunc=dev['devfunc']
+            
             if 'alias' in dev:
                 name=dev['alias']
             if 'prefix' in dev:
@@ -90,7 +87,7 @@ for ioc in iocs:
 
             if zoneSelector and zoneSelector != "ALL" and zoneSelector not in zones:
                 continue
-            if typeSelector and typeSelector != "ALL" and typeSelector != devfunc:
+            if typeSelector and typeSelector != "ALL" and typeSelector != devtype:
                 continue
             if len(zones)==1:
                 zone=zones[0]
@@ -98,7 +95,7 @@ for ioc in iocs:
                 zone=str(zones)
 
 
-            devarray.append({'NAME':name,'R': iocroot, "P": prefix, "TYPE": devfunc, "ZONE": zone,"OPI":opi})
+            devarray.append({'NAME':name,'R': iocroot, "P": prefix, "TYPE": devtype, "ZONE": zone,"OPI":opi})
 
 
 offset = 5
@@ -111,10 +108,12 @@ def createInstance(x, y, macros):
     embedded.setPropertyValue("y", y)
     embedded.setPropertyValue("width", embedded_width)
     embedded.setPropertyValue("height", embedded_height)
+    
     for macro, value in macros.items():
         embedded.getPropertyValue("macros").add(macro, value)
 
-    embedded.setPropertyValue("file", devgroup_widget+ "_channel.bob")
+    devtype=macros.get("TYPE","")
+    embedded.setPropertyValue("file", devgroup_widget+ "_"+devtype+"_"+"channel.bob")
     return embedded
 
 display = widget.getDisplayModel()
