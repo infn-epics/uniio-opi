@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Saved on 2025-07-18 23:43:42 by andreamichelotti-->
 <display version="2.0.0">
-  <name>Cooling Array</name>
+  <name>IO Array</name>
   <width>581</width>
   <height>590</height>
   <actions execute_as_one="true">

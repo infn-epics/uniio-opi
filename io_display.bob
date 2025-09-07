@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--Saved on 2025-07-18 15:42:16 by andreamichelotti-->
 <display version="2.0.0">
-  <name>Cooling Display</name>
+  <name>IO Display</name>
   <width>520</width>
   <height>570</height>
   <scripts>
@@ -12,7 +12,7 @@
   </scripts>
   <widget type="embedded" version="2.0.0">
     <name>element_template</name>
-    <file>cool_channel.bob</file>
+    <file>io_channel.bob</file>
     <y>270</y>
     <width>520</width>
     <height>30</height>

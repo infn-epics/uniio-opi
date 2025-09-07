@@ -1,10 +1,10 @@
-# unicool-opi
-unified view of chiller and cooling 
+# uniio-opi
+unified view of chiller and ioing 
 
 
-## PV Interface for `cool_channel.bob`
+## PV Interface for `io_channel.bob`
 
-The `cool_channel.bob` OPI provides a unified interface for monitoring and controlling cooling channels. It uses the following Process Variables (PVs), which are parameterized via macros for flexibility:
+The `io_channel.bob` OPI provides a unified interface for monitoring and controlling ioing channels. It uses the following Process Variables (PVs), which are parameterized via macros for flexibility:
 
 - **Readout PV (`TEMP_RB`)**  
   Displays the current temperature readout for the channel.  
@@ -15,7 +15,7 @@ The `cool_channel.bob` OPI provides a unified interface for monitoring and contr
   PV format: `$(P):$(R):TEMP_SP`
 
 - **Status PV (`STATE_RB`)**  
-  Shows the current status or state of the cooling channel.  
+  Shows the current status or state of the ioing channel.  
   PV format: `$(P):$(R):STATE_RB`
 
 - **Set Status PV (`STATE_SP`)**  
@@ -24,10 +24,10 @@ The `cool_channel.bob` OPI provides a unified interface for monitoring and contr
 
 ### Possible Values for `STATE_RB` and `STATE_SP`
 
-The status PVs typically represent the operational state of the cooling channel. Possible values may include (depending on your IOC implementation):
+The status PVs typically represent the operational state of the ioing channel. Possible values may include (depending on your IOC implementation):
 
 - `OFF` – Channel is powered off or inactive
-- `ON` – Channel is active and cooling
+- `ON` – Channel is active and ioing
 - `STANDBY` – Channel is in standby mode
 - `FAULT` – Channel has detected a fault condition
 - `MAINTENANCE` – Channel is in maintenance mode
@@ -51,7 +51,7 @@ These values are shown in the status display (`STATE_RB`) and can be selected or
 
 ### PV Naming Convention
 
-All PVs are constructed using the macro substitutions `$(P)` (prefix) and `$(R)` (record or channel identifier), ensuring the interface can be reused for multiple cooling channels by simply changing the macro values.
+All PVs are constructed using the macro substitutions `$(P)` (prefix) and `$(R)` (record or channel identifier), ensuring the interface can be reused for multiple ioing channels by simply changing the macro values.
 
 ---
 
